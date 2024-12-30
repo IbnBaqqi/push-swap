@@ -6,7 +6,7 @@
 #    By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/15 14:57:28 by sabdulba          #+#    #+#              #
-#    Updated: 2024/12/25 14:17:40 by sabdulba         ###   ########.fr        #
+#    Updated: 2024/12/30 20:35:18 by sabdulba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ $(OBJ_DIR):
 $(NAME):$(LIBFT) $(OBJ_DIR) $(OBJ)
 	$(CC) $(OBJ) $(LINK) $(HEADERS) -o $@
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c inc/pipex.h
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c inc/push_swap.h
 	$(CC) -c $(FLAG) $< -o $@ $(HEADERS)
 
 clean:
