@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 18:40:11 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/12/30 23:25:33 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/12/31 21:30:50 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,21 @@ void	add_node_tail(t_node **head, t_node *new_nod)
 	}
 	else
 		*head = new_nod;
+}
+
+t_node	*delete_node(t_node **prev_node, t_node *target_node)
+{
+	if (!*prev_node || !target_node)
+		return (NULL);
+	if (*prev_node == target_node)
+		*prev_node = target_node->next;
+	if (target_node->next != NULL)
+		target_node->next->prev = target_node->prev;
+	if (target_node->prev != NULL)
+		target_node->prev->next = target_node->prev;
+	target_node->prev = NULL;
+	target_node->next = NULL;
+	return (target_node);
 }
 
 t_node	*last_node(t_node *head)

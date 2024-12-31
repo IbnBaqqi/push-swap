@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:57:19 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/12/31 01:16:49 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/12/31 22:13:40 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,25 @@ void	add_node_head(t_node **head, t_node *new);
  * @param new New node to be added to the list
  */
 void	add_node_tail(t_node **head, t_node *new_nod);
+
+/**
+ * @brief A function to delete a node from the list
+ * @param prev_node Previous node linking to the target node
+ * @param target_node Node to be deleted from the list
+ */
+t_node	*delete_node(t_node **prev_node, t_node *target_node);
+
+/**
+ * @brief A function that returns the size of a linked list
+ * @param head Head of the list to get the size
+ */
+int	list_size(t_node **head);
+
+/**
+ * @brief A function to print the nodes of a list
+ * @param head Head of the list to start the printing
+ */
+void	print_list(t_node **head);
 
 // CHECKS
 /**

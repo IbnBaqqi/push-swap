@@ -1,52 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Error.c                                            :+:      :+:    :+:   */
+/*   nodes2.0.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/30 22:07:08 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/12/31 22:18:57 by sabdulba         ###   ########.fr       */
+/*   Created: 2024/12/31 21:40:51 by sabdulba          #+#    #+#             */
+/*   Updated: 2024/12/31 22:10:13 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int error_exit(char *error_msg)
-{
-	ft_printf("%s\n", error_msg);
-	exit(-1);
-}
-
-void	free_stack(t_node **head)
+int	list_size(t_node **head)
 {
 	t_node	*temp;
+	int		size;
 
 	if (!head)
-		return ;
-	while (*head)
+		return (0);
+	temp = *head;
+	size = 0;
+	while (temp)
 	{
-		temp = (*head)->next;
-		free(*head);
-		*head = temp;
+		temp = temp->next;
+		size++;
 	}
+	return (size);
 }
 
-void	free_stacks(t_node **stack_a, t_node **stack_b)
+void	print_list(t_node **head)
 {
-	free_stack(stack_a);
-	free_stack(stack_b);
-}
-
-void	free_tab(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i] != NULL)
+	t_node	*temp;
+	
+	temp = *head;
+	while (temp)
 	{
-		free(str[i]);
-		i++;
+		ft_printf("%d - ", temp->value);
+		temp = temp->next;
 	}
-	free(str);
+	ft_printf("\n");
 }

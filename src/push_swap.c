@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:57:22 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/12/31 00:31:42 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/12/31 22:19:10 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	push_swap(int ac, char **av)
 	t_node	**stack_a;
 	t_node	**stack_b;
 	if (ac < 3)
-		exit(-1);
+		error_exit("Invalid parameters");
 	stack_a = malloc(sizeof(t_node *));
 	stack_b = malloc(sizeof(t_node *));
 	*stack_a = NULL;

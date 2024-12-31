@@ -6,17 +6,12 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 15:43:53 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/12/31 01:22:14 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/12/31 22:17:47 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int error_exit(char *error_msg)
-{
-	ft_printf("%s", error_msg);
-	exit(-1);
-}
 int	check_duplicates(t_node **head)
 {
 	t_node	*curr;
@@ -68,6 +63,7 @@ int	valid_check(int ac, char **av, t_node **head)
 	}
 	if (check_duplicates(head))
 		return (0);
+	print_list(head);
 	return (1);
 }
 int	valid_parse(char *av, t_node **head, int index)
