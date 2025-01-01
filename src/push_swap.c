@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:57:22 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/12/31 22:19:10 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/01 07:58:10 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	push_swap(int ac, char **av)
 	t_node	**stack_a;
 	t_node	**stack_b;
 	if (ac < 3)
-		error_exit("Invalid parameters");
+		error_exit(-1, "Invalid parameters");
 	stack_a = malloc(sizeof(t_node *));
 	stack_b = malloc(sizeof(t_node *));
 	*stack_a = NULL;
@@ -28,6 +28,8 @@ int	push_swap(int ac, char **av)
 		ft_printf("Error Occured\n");
 		return (1);
 	}
+	if (check_sort(stack_a))
+		error_exit(0, "Stack already sorted");
 	return (0);
 }
 

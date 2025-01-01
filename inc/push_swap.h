@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:57:19 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/12/31 22:13:40 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/01 07:57:45 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,10 @@ void	print_list(t_node **head);
 // CHECKS
 /**
  * @brief Exit and print the required error
+ * @param error Error value to exit with
  * @param error_msg Error message to be printed for easy trace of the error
  */
-int error_exit(char *error_msg);
+int error_exit(int error, char *error_msg);
 
 /**
  * @brief A function to check duplicate values in a linkedlist
@@ -113,6 +114,12 @@ int	valid_check(int ac, char **av, t_node **head);
  */
 int	valid_parse(char *av, t_node **head, int index);
 
+/**
+ * @brief A function to check if list is sorted
+ * @param head Head of the list
+ */
+int	check_sort(t_node **head);
+
 //ERROR & FREE
 /**
  * @brief A function to free the Strings od strings
@@ -133,4 +140,39 @@ void	free_stack(t_node **head);
  */
 void	free_stacks(t_node **stack_a, t_node **stack_b);
 
+//OPERATIONS
+
+/**
+ * @brief A fuction to push from a stack to another stack
+ * @param stack_src
+ * @param stack_dst
+ * @param rule The rule to follow i.e push a(pa) or push b(pb)
+ * @param output To check if output is needed to be printed or not
+ */
+void	push(t_node **stack_src, t_node **stack_dst, char *rule, int output);
+
+/**
+ * @brief A function to swap nodes value in a list
+ * @param a Node 1
+ * @param b Node 2
+ * @param rule The rule to follow i.e swap a(sa) or swap b(sb)
+ * @param output To check if output is needed to be printed or not
+ */
+void	swap(t_node *a, t_node *b, char *rule, int output);
+
+/**
+ * @brief
+ * @param head
+ * @param rule
+ * @param output
+ */
+void	rotate(t_node **head, char *rule, int output);
+
+/**
+ * @brief
+ * @param a
+ * @param b
+ * @param output
+ */
+void	double_rotate(t_node **a, t_node **b, int output);
 #endif
