@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 18:40:11 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/12/31 21:30:50 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/01 09:53:34 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ t_node	*create_node(int value, int index)
 	return (new);
 }
 
-void	add_node_head(t_node **head, t_node *new)
+void	add_node_head(t_node **head, t_node *new_nod)
 {
-	new->next = *head;
+	new_nod->next = *head;
 	if (*head != NULL)
-		(*head)->prev = new;
-	*head = new;
+		(*head)->prev = new_nod;
+	*head = new_nod;
 }
 
 void	add_node_tail(t_node **head, t_node *new_nod)

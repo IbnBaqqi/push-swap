@@ -6,7 +6,7 @@
 #    By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/15 14:57:28 by sabdulba          #+#    #+#              #
-#    Updated: 2024/12/30 20:35:18 by sabdulba         ###   ########.fr        #
+#    Updated: 2025/01/01 09:24:15 by sabdulba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ HEADERS := -I ./inc -I $(LIBFT_DIR)/inc
 LINK := -L$(LIBFT_DIR) -lft
 
 SRC_DIR := src
-SRC := $(shell ls src/*.c)
+#SRC := $(shell ls src/*.c)
+SRC := $(shell find $(SRC_DIR) -type f -name "*.c")
 
 OBJ_DIR := obj
 OBJ := $(SRC:src%.c=obj%.o)
@@ -41,6 +42,7 @@ $(NAME):$(LIBFT) $(OBJ_DIR) $(OBJ)
 	$(CC) $(OBJ) $(LINK) $(HEADERS) -o $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c inc/push_swap.h
+	@mkdir -p $(dir $@)
 	$(CC) -c $(FLAG) $< -o $@ $(HEADERS)
 
 clean:
