@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 09:51:17 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/01 10:12:54 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/01 23:18:41 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,3 +59,8 @@ int	list_size(t_node **head);
  * @param head Head of the list to start the printing
  */
 void	print_list(t_node **head);
+
+t_node_details	*max_details(t_node **head);
+t_node_details	*min_details(t_node **head);
+t_node_details	*mid_details(t_node **head);
+t_details		*special_node(t_node **stack_a);

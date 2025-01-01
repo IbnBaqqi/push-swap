@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:57:19 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/01 10:17:39 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/01 21:30:25 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <ctype.h>
-
+# include <limits.h>
 typedef struct s_node 
 {
 	int value;
@@ -25,6 +25,18 @@ typedef struct s_node
 	struct s_node *next;
 	struct s_node *prev;
 } t_node;
+
+typedef struct s_node_details {
+    int index;
+    int value;
+    struct s_node *node;  
+} t_node_details;
+
+typedef struct s_details {
+    t_node_details *min;
+    t_node_details *mid;
+    t_node_details *max;
+} t_details;
 
 # include "nodes.h"
 # include "checks.h"
