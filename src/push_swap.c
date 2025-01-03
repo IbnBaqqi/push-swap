@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:57:22 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/01 08:09:48 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/03 07:30:50 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ int	push_swap(int ac, char **av)
 	}
 	if (check_sort(stack_a))
 		error_exit(0, "Stack already sorted");
-	
+	which_sort(stack_a, stack_b);
+	print_list(stack_a);
+	free_stacks(stack_a, stack_b);
+	free(stack_a);
+	free(stack_b);
 	return (0);
 }
 

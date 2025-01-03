@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 10:12:03 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/01 10:13:20 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/03 07:24:44 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void	push(t_node **stack_src, t_node **stack_dst, char *rule, int output);
  */
 void	swap(t_node *a, t_node *b, char *rule, int output);
 
+void	double_swap(t_node *a, t_node *b, int output);
+
 /**
  * @brief
  * @param head
@@ -39,6 +41,10 @@ void	swap(t_node *a, t_node *b, char *rule, int output);
  * @param output
  */
 void	rotate(t_node **head, char *rule, int output);
+
+void	double_rotate(t_node **a, t_node **b, int output);
+
+void	reverse_rotate(t_node **head, char *rule, int output);
 
 /**
  * @brief

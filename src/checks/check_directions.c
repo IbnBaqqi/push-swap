@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 09:26:01 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/02 09:02:11 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/02 23:11:18 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	check_back(t_node *min_node, t_node **stack_a)
 	return (0);
 }
 
-int	check_cyclic(t_node **stack_a)
+int	check_cyclic(t_node **stack_a) //TODO
 {
 	t_node_details	*min;
 
