@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:57:19 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/03 07:25:16 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/04 02:34:55 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,8 @@ void	free_stacks(t_node **stack_a, t_node **stack_b);
 
 void	which_sort(t_node **stack_a, t_node **stack_b);
 
-void	sort_three(t_node **head);
+//void	sort_three(t_node **head);
+
+void	sort_three(t_node **head_ref, char check_cyclic);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 01:03:24 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/02 23:14:32 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/04 03:23:24 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	swap(t_node *a, t_node *b, char *rule, int output)
 	temp = a->value;
 	a->value = b->value;
 	b->value = temp;
-	if (output && *rule)
+	if (output && rule[0])
 		ft_printf("%s\n", rule);
 }
 

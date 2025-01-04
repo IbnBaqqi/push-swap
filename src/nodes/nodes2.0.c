@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/31 21:40:51 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/12/31 22:10:13 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/04 03:17:31 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ int	list_size(t_node **head)
 
 	if (!head)
 		return (0);
-	temp = *head;
 	size = 0;
+	temp = *head;
 	while (temp)
 	{
-		temp = temp->next;
 		size++;
+		temp = temp->next;
 	}
 	return (size);
 }

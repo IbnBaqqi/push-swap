@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 09:26:01 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/02 23:11:18 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/04 02:55:53 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	check_cyclic(t_node **stack_a) //TODO
 	if (min->node->next && min->node->prev)
 	{
 		if (((*stack_a)->value < last_node(*stack_a)->value)
-			|| (*stack_a)->value == min->value)
+				|| (*stack_a)->value == min->value)
 			return (free(min), 0);
 	}
 	if (min->node->prev && !check_front(min->node, stack_a))

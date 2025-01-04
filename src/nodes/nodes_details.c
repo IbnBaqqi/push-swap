@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 21:10:24 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/01 23:16:07 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/03 23:06:43 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_node_details	*max_details(t_node **head)
 
 	temp = *head;
 	index = 0;
-	max = INT32_MIN;
+	max = INT_MIN;
 	nod_details = malloc(sizeof(t_node_details));
 	while (temp)
 	{
@@ -47,7 +47,7 @@ t_node_details	*min_details(t_node **head)
 
 	temp = *head;
 	index = 0;
-	min = INT32_MAX;
+	min = INT_MAX;
 	nod_details = malloc(sizeof(t_node_details));
 	while (temp)
 	{

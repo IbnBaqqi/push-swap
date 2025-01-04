@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 08:11:00 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/03 07:29:16 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/04 02:36:01 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	which_sort(t_node **stack_a, t_node **stack_b)
 	if (size < 4)
 	{
 		(void)stack_b;
-		sort_three(stack_a); //TODO
+		sort_three(stack_a, 'n'); //TODO
 	}
 	else
 		return ;
