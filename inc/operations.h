@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 10:12:03 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/03 07:24:44 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/04 15:21:59 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	push(t_node **stack_src, t_node **stack_dst, char *rule, int output);
  * @param rule The rule to follow i.e swap a(sa) or swap b(sb)
  * @param output To check if output is needed to be printed or not
  */
-void	swap(t_node *a, t_node *b, char *rule, int output);
+void	swap_nod(t_node *a, t_node *b, char *rule, int output);
 
 void	double_swap(t_node *a, t_node *b, int output);
 

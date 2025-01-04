@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 08:11:00 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/04 02:36:01 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:00:03 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,8 @@ void	which_sort(t_node **stack_a, t_node **stack_b)
 
 	size = list_size(stack_a);
 	if (size < 4)
-	{
-		(void)stack_b;
-		sort_three(stack_a, 'n'); //TODO
-	}
-	else
-		return ;
-		//big_guns(stack_a, stack_b); // TODO
+		sort_three(stack_a, 'n');
+		//sort_three(stack_a);
+	else if (size > 3)
+		big_guns(stack_a, stack_b); // TODO
 }

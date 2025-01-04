@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 06:46:27 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/04 03:21:50 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/04 20:58:48 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	rotate(t_node **head, char *rule, int output)
 {
-	t_node *del_node;
+	t_node	*del_node;
 
 	del_node = delete_node(head, *head);
 	add_node_tail(head, del_node);
@@ -45,5 +45,6 @@ void	double_reverse(t_node **a, t_node **b, int output)
 {
 	reverse_rotate(a, "", output);
 	reverse_rotate(b, "", output);
-	ft_printf("rrr\n");
+	if (output)
+		ft_printf("rrr\n");
 }

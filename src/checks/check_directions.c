@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 09:26:01 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/04 02:55:53 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/04 20:53:33 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,27 @@ int	check_back(t_node *min_node, t_node **stack_a)
 {
 	t_node	*temp;
 
-	temp = min_node;
+	temp = min_node->prev;
 	while (temp->prev)
 	{
-		if (temp->value > temp->prev->value)
+		if (temp->value < temp->prev->value)
 			break ;
 		temp = temp->prev;
 	}
-	if (last_node(*stack_a)->value == temp->value)
+	if ((*stack_a)->value == temp->value)
 		return (1);
 	return (0);
 }
 
-int	check_cyclic(t_node **stack_a) //TODO
+int	is_cyclic(t_node **stack_a)
 {
 	t_node_details	*min;
 
 	min = min_details(stack_a);
 	if (min->node->next && min->node->prev)
 	{
-		if (((*stack_a)->value < last_node(*stack_a)->value)
-				|| (*stack_a)->value == min->value)
+		if ((*stack_a)->value < last_node(*stack_a)->value
+			|| (*stack_a)->value == min->value)
 			return (free(min), 0);
 	}
 	if (min->node->prev && !check_front(min->node, stack_a))

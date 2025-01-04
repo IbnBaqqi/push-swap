@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:57:19 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/04 02:34:55 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/04 20:44:43 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,7 @@ void	which_sort(t_node **stack_a, t_node **stack_b);
 //void	sort_three(t_node **head);
 
 void	sort_three(t_node **head_ref, char check_cyclic);
+
+void	big_guns(t_node **stack_a, t_node **stack_b);
 
 #endif

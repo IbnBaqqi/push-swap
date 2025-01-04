@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 21:10:24 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/03 23:06:43 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/04 20:58:11 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ t_node_details	*min_details(t_node **head)
 	}
 	return (nod_details);
 }
+
 t_node_details	*mid_details(t_node **head)
 {
 	t_node			*temp;
@@ -85,6 +86,7 @@ t_node_details	*mid_details(t_node **head)
 	}
 	return (nod_details);
 }
+
 t_details	*special_node(t_node **stack_a)
 {
 	t_details	*all_nodes;
