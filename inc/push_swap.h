@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:57:19 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/04 20:44:43 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/05 00:30:26 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ typedef struct s_node
 {
 	int value;
 	int list_index;
+	int	order_index;
 	struct s_node *next;
 	struct s_node *prev;
 } t_node;
