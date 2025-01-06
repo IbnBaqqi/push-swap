@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 11:25:43 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/06 11:32:15 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/06 13:22:40 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,20 +32,20 @@ void	target_cost(t_node **stack_a, t_node **stack_b,
 {
 	char		found;
 	t_node		*tmp;
-	t_node		*last_node;
+	t_node		*last_nod;
 
-	last_node = ft_last_node(*stack_a);
+	last_nod = last_node(*stack_a);
 	tmp = *stack_b;
 	while (tmp)
 	{
 		found = 'n';
-		head_to_tail(stack_a, tmp, &found, last_node);
+		head_to_tail(stack_a, tmp, &found, last_nod);
 		if (found != 'y')
 			min_max_handler(tmp, &found, size, details);
 		if (found != 'y')
 			waterfall(tmp, &found, details, size);
 		if (found != 'y')
-			spring(tmp, &found, details, size);
+			fountain(tmp, &found, details, size);
 		tmp = tmp->next;
 	}
 }
@@ -106,7 +106,7 @@ t_node	*highest_priority(t_node **stack_b, t_node **stack_a)
 	t_node	*tmp;
 	t_node	*highest;
 
-	nbr = 2147483647; //INT_MAX;
+	nbr = INT_MAX;
 	tmp = *stack_b;
 	while (tmp)
 	{

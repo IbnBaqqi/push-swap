@@ -6,13 +6,13 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 23:59:52 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/06 04:07:04 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/06 13:23:03 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int *fill_array(t_node **stack_a)
+int	*fill_array(t_node **stack_a)
 {
 	int		*array;
 	t_node	*temp;
@@ -29,6 +29,7 @@ int *fill_array(t_node **stack_a)
 	}
 	return (array);
 }
+
 void	index_array(t_node **stack_a)
 {
 	int		*array;

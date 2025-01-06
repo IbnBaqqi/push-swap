@@ -6,16 +6,16 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 00:31:12 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/06 03:50:09 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/06 13:33:36 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include "push_swap.h"
 #include <stdio.h>
 
-void 	ft_swap(int *a, int *b)
+void	ft_swap(int *a, int *b)
 {
-	int temp;
+	int	temp;
 
 	temp = *a;
 	*a = *b;
@@ -33,13 +33,16 @@ int	partition(int *arr, int low, int high)
 	pivot = arr[low];
 	while (1)
 	{
-		while (arr[++i] < pivot);
-		while (arr[--j] > pivot);
-		if (i > j)
+		while (arr[++i] < pivot)
+		{
+		}
+		while (arr[--j] > pivot)
+		{
+		}
+		if (i >= j)
 			return (j);
 		ft_swap(&arr[i], &arr[j]);
 	}
-	
 }
 
 void	quick_sort(int *array, int low, int high)

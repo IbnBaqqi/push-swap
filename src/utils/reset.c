@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 21:49:48 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/06 10:39:30 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/06 13:22:00 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	recalibrate(t_node **head)
 {
 	t_node	*temp;
 	int		i;
-	
+
 	if (!head)
 		return ;
 	i = 0;
@@ -28,6 +28,7 @@ void	recalibrate(t_node **head)
 		i++;
 	}
 }
+
 void	resort_special(t_node **stack_a)
 {
 	t_details	*details;
@@ -39,6 +40,7 @@ void	resort_special(t_node **stack_a)
 	free(details->mid);
 	free(details);
 }
+
 void	reconfigure(t_node **stack_a, t_node **stack_b)
 {
 	int				size_stacka;
@@ -47,13 +49,13 @@ void	reconfigure(t_node **stack_a, t_node **stack_b)
 	int				mid_index;
 	t_node_details	*mid;
 
-	re_calibrator(stack_b);
-	re_calibrator(stack_a);
-	size_stacka = lst_size(stack_a);
-	size_stackb = lst_size(stack_b);
-	mid = mid_node_details(stack_b);
+	recalibrate(stack_b);
+	recalibrate(stack_a);
+	size_stacka = list_size(stack_a);
+	size_stackb = list_size(stack_b);
+	mid = mid_details(stack_b);
 	mid_index = mid->index;
-	details = special_nodes(stack_a);
+	details = special_node(stack_a);
 	exit_cost(stack_b, size_stackb, mid_index);
 	target_cost(stack_a, stack_b, details, size_stacka);
 	optimize(stack_b);

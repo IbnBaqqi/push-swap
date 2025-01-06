@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_node.c                                      :+:      :+:    :+:   */
+/*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/04 15:26:25 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/06 16:29:22 by sabdulba         ###   ########.fr       */
+/*   Created: 2025/01/06 12:45:05 by sabdulba          #+#    #+#             */
+/*   Updated: 2025/01/06 13:22:46 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*create_node(int value, int index)
+void	helper(t_node *highest, t_node **stack_a, t_node **stack_b, char ptr)
 {
-	t_node	*new;
+	int	num;
 
-	new = malloc(sizeof(t_node));
-	if (!new)
-		return (NULL);
-	new->value = value;
-	new->list_index = index;
-	new->target_cost = 0;
-	new->priority = 0;
-	new->optimized = 0;
-	new->exit_cost = 0;
-	new->order_index = 0;
-	new->next = NULL;
-	new->prev = NULL;
-	return (new);
+	num = highest->optimized;
+	if (ptr == 'r')
+		repeat_double_rotate(stack_a, stack_b, num, 1);
+	else
+		repeat_double_reverse(stack_a, stack_b, num, 1);
+	highest->exit_cost += (num * -1);
+	highest->target_cost += (num * -1);
+}
+
+void	highest_helper(t_node **highest, t_node *tmp, int *nbr)
+{
+	*highest = tmp;
+	*nbr = tmp->priority;
 }

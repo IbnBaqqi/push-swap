@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   which_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 08:11:00 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/04 21:00:03 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/06 12:56:47 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	which_sort(t_node **stack_a, t_node **stack_b)
 	size = list_size(stack_a);
 	if (size < 4)
 		sort_three(stack_a, 'n');
-		//sort_three(stack_a);
 	else if (size > 3)
-		big_guns(stack_a, stack_b); // TODO
+		big_guns(stack_a, stack_b);
 }

@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:57:19 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/06 11:33:45 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/06 12:55:56 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,7 @@ typedef struct s_details {
 # include "operations.h"
 # include "../lib/libft/inc/libft.h"
 
-/**
- * @brief Entry point for the program
- * @param ac length of arguments from command line
- * @param av Each string from command line
- */
+
 int	push_swap(int ac, char **av);
 
 
@@ -104,4 +100,20 @@ void	priority(t_node **stack_b);
 t_node	*highest_priority(t_node **stack_b, t_node **stack_a);
 void	target_cost(t_node **stack_a, t_node **stack_b,
 		t_details *details, int size);
+
+//resets
+void	resort_special(t_node **stack_a);
+void	recalibrate(t_node **head);
+void	reconfigure(t_node **stack_a, t_node **stack_b);
+void	target_moves(t_node *highest, t_node **stack_a);
+
+void	highest_helper(t_node **highest, t_node *tmp, int *nbr);
+void	helper(t_node *highest, t_node **stack_a, t_node **stack_b, char ptr);
+
+//signs
+void	both_positive(t_node *temp);
+void	both_negative(t_node *temp);
+void	exit_zero(t_node *temp);
+void	target_zero(t_node *temp);
+
 #endif

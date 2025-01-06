@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/30 22:07:08 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/04 20:51:24 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/06 15:26:10 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	free_stack(t_node **head)
 {
 	t_node	*temp;
 
-	if (!head)
+	if (!head || !*head)
 		return ;
 	while (*head)
 	{
@@ -30,6 +30,7 @@ void	free_stack(t_node **head)
 		free(*head);
 		*head = temp;
 	}
+	*head = NULL;
 }
 
 void	free_stacks(t_node **stack_a, t_node **stack_b)

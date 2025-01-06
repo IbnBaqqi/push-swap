@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 15:43:53 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/04 20:57:40 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/06 13:47:16 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,8 @@ int	valid_parse(char *av, t_node **head, int index)
 			return (0);
 		i++;
 	}
-	nbr = ft_atoi(av); //change to handle long
-	if (nbr < -2147483648 || nbr > 2147483647)
+	nbr = ft_atoi(av);
+	if (nbr < INT_MIN || nbr > INT_MAX)
 		return (0);
 	new = create_node(nbr, index);
 	add_node_tail(head, new);
