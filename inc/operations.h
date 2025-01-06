@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/01 10:12:03 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/04 15:21:59 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/06 09:39:12 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ void	double_swap(t_node *a, t_node *b, int output);
  */
 void	rotate(t_node **head, char *rule, int output);
 
-void	double_rotate(t_node **a, t_node **b, int output);
-
 void	reverse_rotate(t_node **head, char *rule, int output);
 
 /**
@@ -53,3 +51,15 @@ void	reverse_rotate(t_node **head, char *rule, int output);
  * @param output
  */
 void	double_rotate(t_node **a, t_node **b, int output);
+
+void	double_reverse(t_node **a, t_node **b, int output);
+
+void	repeat_rotate(t_node **head, int num, char *ptr, int output);
+
+void	repeat_push(t_stacks *stacks, int num, char *ptr, int output);
+
+void	repeat_reverse(t_node **head, int num, char *rule, int output);
+
+void	repeat_double_rotate(t_node **x, t_node **y, int num, int output);
+
+void	repeat_double_reverse(t_node **x, t_node **y, int num, int output);

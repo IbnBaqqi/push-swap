@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/15 14:57:19 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/05 00:30:26 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/06 11:33:45 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,32 @@
 # include <limits.h>
 typedef struct s_node 
 {
-	int value;
-	int list_index;
-	int	order_index;
-	struct s_node *next;
-	struct s_node *prev;
+	int				value;
+	int				list_index;
+	int				order_index;
+	int				exit_cost;
+	int				target_cost;
+	int				optimized;
+	int				priority;
+	struct s_node	*next;
+	struct s_node	*prev;
 } t_node;
 
+typedef struct s_stacks {
+	struct s_node	**stack_a;
+	struct s_node	**stack_b;
+}	t_stacks;
+
 typedef struct s_node_details {
-    int index;
-    int value;
-    struct s_node *node;  
+    int				index;
+    int				value;
+    struct s_node	*node;  
 } t_node_details;
 
 typedef struct s_details {
-    t_node_details *min;
-    t_node_details *mid;
-    t_node_details *max;
+    t_node_details	*min;
+    t_node_details	*mid;
+    t_node_details	*max;
 } t_details;
 
 # include "nodes.h"
@@ -53,23 +62,11 @@ int	push_swap(int ac, char **av);
 
 
 //ERROR & FREE
-/**
- * @brief A function to free the Strings od strings
- * @param str String of strings to free
- */
+
 void	free_tab(char **str);
 
-/**
- * @brief A function to free the single stack
- * @param head Head of the stack to begin the freeing
- */
 void	free_stack(t_node **head);
 
-/**
- * @brief A function to free the two stacks
- * @param stack_a Stack A
- * @param stack_b Stack B
- */
 void	free_stacks(t_node **stack_a, t_node **stack_b);
 
 void	which_sort(t_node **stack_a, t_node **stack_b);
@@ -78,6 +75,33 @@ void	which_sort(t_node **stack_a, t_node **stack_b);
 
 void	sort_three(t_node **head_ref, char check_cyclic);
 
+void	index_array(t_node **stack_a);
+
+int		*fill_array(t_node **stack_a);
+
 void	big_guns(t_node **stack_a, t_node **stack_b);
 
+void	quick_sort(int *array, int low, int high);
+
+void	pick_next_move(t_node **stack, int target_index, int mid_index);
+
+void	reconfigure(t_node **stack_a, t_node **stack_b);
+
+//Searches
+void	fountain(t_node *exiting_nod, char *found, t_details *details, int size);
+
+void	head_to_tail(t_node **stack_a, t_node *exiting_node,
+		char *found, t_node *last_node);
+void	waterfall(t_node *exiting_node,
+		char *found, t_details *details, int size);
+void	min_max_handler(t_node *exiting_node, char *found,
+		int size, t_details *details);
+
+//Costs
+void	exit_cost(t_node **stack, int size, int mid_index);
+void	optimize(t_node **stack_b);
+void	priority(t_node **stack_b);
+t_node	*highest_priority(t_node **stack_b, t_node **stack_a);
+void	target_cost(t_node **stack_a, t_node **stack_b,
+		t_details *details, int size);
 #endif

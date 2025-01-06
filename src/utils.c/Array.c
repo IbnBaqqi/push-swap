@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 23:59:52 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/05 00:30:32 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/06 04:07:04 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	index_array(t_node **stack_a)
 	i = 0;
 	temp = *stack_a;
 	array = fill_array(stack_a);
-	quicK_sort(array); //TODO
+	quick_sort(array, 0, list_size(stack_a) - 1);
 	while (temp)
 	{
 		i = 0;
