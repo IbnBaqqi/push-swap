@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 11:25:43 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/06 13:22:40 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/08 07:51:57 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	exit_cost(t_node **stack, int size, int mid_index)
 }
 
 void	target_cost(t_node **stack_a, t_node **stack_b,
-	t_details *details, int size)
+	t_detai *details, int size)
 {
 	char		found;
 	t_node		*tmp;

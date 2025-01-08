@@ -6,14 +6,14 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 11:01:25 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/06 13:16:38 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/08 07:51:57 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 void	min_max_handler(t_node *exiting_node, char *found,
-	int size, t_details *details)
+	int size, t_detai *details)
 {
 	if ((exiting_node->value < details->min->node->value)
 		|| (exiting_node->value > details->max->node->value))
@@ -28,7 +28,7 @@ void	min_max_handler(t_node *exiting_node, char *found,
 }
 
 void	waterfall(t_node *exiting_node,
-	char *found, t_details *details, int size)
+	char *found, t_detai *details, int size)
 {
 	t_node	*tmp;
 	int		mid_index;
@@ -52,7 +52,7 @@ void	waterfall(t_node *exiting_node,
 	}
 }
 
-void	fountain(t_node *exiting_nod, char *found, t_details *details, int size)
+void	fountain(t_node *exiting_nod, char *found, t_detai *details, int size)
 {
 	t_node	*tmp;
 	int		mid_pos;

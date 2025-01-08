@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/25 15:43:53 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/06 13:47:16 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/08 08:45:31 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,32 +34,43 @@ int	check_duplicates(t_node **head)
 	return (0);
 }
 
+int	valid_check_arg(char *arg, t_node **head, int *y)
+{
+	char	**list;
+	int		j;
+
+	j = 0;
+	list = ft_split(&arg[j], ' ');
+	if (!list || !*list)
+	{
+		free_tab(list);
+		return (0);
+	}
+	while (list[j])
+	{
+		if (!valid_parse(list[j], head, *y))
+		{
+			free_tab(list);
+			return (0);
+		}
+		y++;
+		j++;
+	}
+	free_tab(list);
+	return (1);
+}
+
 int	valid_check(int ac, char **av, t_node **head)
 {
 	int		i;
-	int		j;
 	int		y;
-	char	**list;
 
 	i = 1;
 	y = 0;
 	while (i < ac)
 	{
-		list = ft_split(av[i], ' ');
-		if (!list || !*list)
-		{
-			free_tab(list);
+		if (!valid_check_arg(av[i], head, &y))
 			return (0);
-		}
-		j = 0;
-		while (list[j])
-		{
-			if (!valid_parse(list[j], head, y))
-				return (0);
-			y++;
-			j++;
-		}
-		free_tab(list);
 		i++;
 	}
 	if (check_duplicates(head))
@@ -107,17 +118,3 @@ int	check_sort(t_node **head)
 	}
 	return (1);
 }
-// int	check_sort(t_node **head)
-// {
-// 	t_node	*temp;
-// 	if (!*head)
-// 		return (0);
-// 	temp = *head;
-// 	while(temp->next)
-// 	{
-// 		if (temp->value > temp->next->value)
-// 			return (0);
-// 		temp = temp->next;
-// 	}
-// 	return (1);
-// }

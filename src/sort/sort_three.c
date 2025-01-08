@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 09:05:12 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/04 20:59:12 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/08 07:56:18 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	sort_three(t_node **head_ref, char check_cyclic)
 	int				prev_val;
 	t_node			*mid_node;
 	int				next_val;
-	t_node_details	*mid;
+	t_no_de			*mid;
 
 	if (check_sort(head_ref) || (check_cyclic == 'y' && is_cyclic(head_ref)))
 		return ;

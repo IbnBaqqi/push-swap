@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 21:49:48 by sabdulba          #+#    #+#             */
-/*   Updated: 2025/01/06 13:22:00 by sabdulba         ###   ########.fr       */
+/*   Updated: 2025/01/08 07:56:46 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	recalibrate(t_node **head)
 
 void	resort_special(t_node **stack_a)
 {
-	t_details	*details;
+	t_detai	*details;
 
 	details = special_node(stack_a);
 	pick_next_move(stack_a, details->min->index, details->mid->index);
@@ -45,9 +45,9 @@ void	reconfigure(t_node **stack_a, t_node **stack_b)
 {
 	int				size_stacka;
 	int				size_stackb;
-	t_details		*details;
+	t_detai			*details;
 	int				mid_index;
-	t_node_details	*mid;
+	t_no_de			*mid;
 
 	recalibrate(stack_b);
 	recalibrate(stack_a);
